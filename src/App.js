@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Nav from "./components/Nav/Nav";
+import ModalContext from "./context/ModelContext";
+import GlobalStyle from "./GlobalStyle";
+import AllPosts from "./pages/AllPosts";
+import CreatePost from "./pages/CreatePost";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
-function App() {
+
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <ModalContext.Provider value={{ isOpen, setIsOpen }}>
+        <BrowserRouter>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route exact path="/all-posts" element={<AllPosts />} />
+            <Route exact path="/create" element={<CreatePost />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ModalContext.Provider>
+    </>
   );
-}
+};
 
 export default App;
