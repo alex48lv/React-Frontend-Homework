@@ -7,8 +7,8 @@ const StyledButton = styled.button`
     margin: ${margins.sm} auto;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: #2f3236;
-    color: white;
+    background: ${colors.bg};
+    color: ${colors.white};
     border-radius: 5px;
 `;
 

@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { colors, fontSizes } from "../../theme/theme";
 
 const Header = styled.h1`
     margin-top: 8rem;
-    font-size: 3.5rem;
+    font-size: ${fontSizes.xl};
     font-weight: 400;
-    color: white;
+    color: ${colors.white};
     text-align: center;
     letter-spacing: -.1rem;
 `;

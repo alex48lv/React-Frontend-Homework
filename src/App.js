@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Auth from "./components/auth/Auth";
 import Nav from "./components/Nav/Nav";
 import ModalContext from "./context/ModelContext";
 import GlobalStyle from "./GlobalStyle";
@@ -19,11 +20,13 @@ const App = () => {
         <BrowserRouter>
           <Nav />
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
             <Route exact path="/all-posts" element={<AllPosts />} />
             <Route exact path="/create" element={<CreatePost />} />
-            <Route path="*" element={<NotFound />} />
+
           </Routes>
+          {isOpen && <Auth />}
         </BrowserRouter>
       </ModalContext.Provider>
     </>

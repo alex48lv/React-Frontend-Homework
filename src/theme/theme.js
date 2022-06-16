@@ -1,7 +1,8 @@
 export const colors = {
-    bg: "#F9F7F7",
-    darkBlue: "#112D4E",
-    lightBlue: "#DBE2EF",
+    bg: "#2f3236",
+    white: "#ffffff",
+    black: "#000000",
+    lightGrey: "#d3d3d3",
     error: '#FF6347',
   };
   
@@ -10,6 +11,7 @@ export const colors = {
     sm: "1rem",
     md: "1.25rem",
     lg: "2rem",
+    xl: "3.5rem",
   };
   
   export const margins = {

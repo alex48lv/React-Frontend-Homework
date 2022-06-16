@@ -7,7 +7,7 @@ const Title = styled.h3`
     text-align: center;
     font-size: ${fontSizes.md};
     font-weight: 700;
-    color: #2f3236;
+    color: ${colors.bg};
 `;
 
 const FormTitle = ({ children }) => (

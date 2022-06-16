@@ -10,14 +10,14 @@ const ContentContainer = styled.div`
     flex-direction: column;
 
     h3 {
-        color: white;
-        font-size: 4rem;
+        color: ${colors.white};
+        font-size: ${fontSizes.xl};
         font-weight: 700;
     }
 
     p {
         font-size: ${fontSizes.lg};
-        color: lightgrey;
+        color: ${colors.lightGrey};
         font-weight: 700;
     }
 `;

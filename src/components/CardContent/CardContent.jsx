@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { devices, fontSizes, margins, paddings } from "../../theme/theme";
+import { colors, devices, fontSizes, margins, paddings } from "../../theme/theme";
 
 const Card = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ const Card = styled.div`
     margin: ${margins.sm} auto;
     width: 17rem;
     height: 20rem;
-    background: white;
+    background: ${colors.white};
 
     ${devices.mobile} {
         
@@ -41,7 +41,7 @@ const CardButton = styled(Link)`
     font-size: ${fontSizes.xs};
     text-decoration: none;
     text-transform: uppercase;
-    color: black;
+    color: ${colors.black};
 `;
 
 const CardContent = ({ data }) => {

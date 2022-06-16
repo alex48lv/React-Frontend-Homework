@@ -11,7 +11,7 @@ const NavContainer = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  background: white;
+  background: ${colors.white};
 `;
 
 const Logo = styled.div`
@@ -65,7 +65,7 @@ const NavButton = styled.div`
 const StyledLink = styled(Link)`
   display: block;
   font-size: ${fontSizes.md};
-  color: black;
+  color: ${colors.black};
   text-decoration: none;
   margin: auto 0 auto ${margins.sm};
 `;
@@ -95,7 +95,7 @@ const DropDown = styled.div`
   right: 0;
   top: 4rem;
   padding: ${paddings.sm};
-  background: lightgrey;
+  background: ${colors.lightGrey};
   z-index: ${zIndexes.sideBar};
   display: none;
 
@@ -113,7 +113,7 @@ const MobileMenu = styled.div`
   position: absolute;
   top: 4rem;
   padding: ${paddings.sm};
-  background: lightgrey;
+  background: ${colors.lightGrey};
   z-index: ${zIndexes.sideBar};
 
   ${devices.tablet} {

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import styled from "styled-components";
 import SubmitButton from '../components/buttons/SubmitButton';
@@ -7,7 +7,7 @@ import InputField from '../components/form/InputField';
 import InputLabel from '../components/form/InputLabel';
 import { colors, devices, margins, paddings } from '../theme/theme';
 
-const FormCreate = styled.div`
+const FormCreate = styled.form`
     width: 300px;
     height: 350px;
     display: flex;
@@ -16,7 +16,7 @@ const FormCreate = styled.div`
     flex-direction: column;
     margin: 8rem auto;
     padding: ${paddings.md};
-    background: white;
+    background: ${colors.white};
     border-radius: 3%;
 `;
 
@@ -24,27 +24,29 @@ const TextField = styled.textarea`
     width: 100%;
     border: 1px solid ${colors.lightBlue};
     margin-bottom: ${margins.md};
-    background: lightgrey;
-    border: 1px solid #2f3236;
+    background: ${colors.lightGrey};
+    border: 1px solid ${colors.bg};
     border-radius: 5px;
     box-sizing: border-box;
 `;
 
-const CreatePost = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+export default function CreatePost() {
+    const { register, handleSubmit, setValue } = useForm();
     const onSubmit = data => console.log(data);
-    console.log(errors);
+  
+    React.useEffect(() => {
+      register("title", { required: true });
+      register("text");
+    }, []);
 
     return (
         <FormCreate onSubmit={handleSubmit(onSubmit)}>
             <FormTitle>Create a post</FormTitle>
             <InputLabel for="title">Title</InputLabel>
-            <InputField type="text" name="title" {...register("Text", { required: true, max: 60, min: 1 })} />
+            <InputField type="text" name="title" onChange={e => setValue("title", e.target.value)} />
             <InputLabel for="text">Enter your text here</InputLabel>
-            <TextField rows="5" name="text" {...register("Text", { required: true, max: 255, min: 1 })} />
+            <TextField id="text" rows="5" name="text" onChange={e => setValue("text", e.target.value)} />
             <SubmitButton>Send</SubmitButton>
         </FormCreate>
     );
 }
-
-export default CreatePost;

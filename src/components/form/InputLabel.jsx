@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { fontSizes, margins } from "../../theme/theme";
+import { colors, fontSizes, margins } from "../../theme/theme";
 
 const Label = styled.label`
     width: 90%;
     margin: .25rem;
     font-size: ${fontSizes.xs};
     font-weight: bold;
-    color: #2f3236;
+    color: ${colors.bg};
     opacity: .8;
 `;
 

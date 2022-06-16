@@ -6,12 +6,12 @@ const StyledField = styled.input`
     height: 2rem;
     border: 1px solid ${colors.lightBlue};
     margin-bottom: ${margins.md};
-    background: lightgrey;
-    border: 1px solid #2f3236;
+    background: ${colors.lightGrey};
+    border: 1px solid ${colors.bg};
     border-radius: 5px;
     box-sizing: border-box;
 `;
 
-const InputField = ({ type, name, placeholder }) => <StyledField type={type} name={name} placeholder={placeholder} />;
+const InputField = ({ className, type, name }) => <StyledField className={className} type={type} name={name} />;
 
 export default InputField;
