@@ -1,14 +1,13 @@
-
-import { object, string } from "yup";
 import FormTitle from "../form/FormTitle";
-import InputField from "../form/InputField";
+import FieldInput from "../form/InputField";
 import SubmitButton from "../buttons/SubmitButton";
 import styled from "styled-components";
 import { colors, margins, paddings } from "../../theme/theme";
 import InputLabel from "../form/InputLabel";
 import { useForm } from "react-hook-form";
+import React from "react";
 
-const AuthInputField = styled(InputField)`
+const AuthInputField = styled(FieldInput)`
     margin-bottom: ${margins.xs};
 `;
 
@@ -26,17 +25,16 @@ const FormSwitchText = styled.div`
 `;
 
 const ForgotPassword = ({ formChangeHandler }) => {
-    const { register, handleSubmit } = useForm({
-        defaultValues: {
-            email: ''
-        }
-    });
+    const defaultValues = { email: ForgotPassword.email };
+    const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues });
+    const onSubmit = data => console.log(data);
 
     return (
-        <form onSubmit={handleSubmit(console.log)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <FormTitle>Reset Password</FormTitle>
             <InputLabel for="email">Email</InputLabel>
-            <AuthInputField type="text" name="email" {...register("email", { required: true })} />
+            <AuthInputField type="email" name="email" {...register("email", { required: true })} />
+            {errors.email && <span>This field is required</span>}
             <SubmitButton>Submit</SubmitButton>
             <FormFooter>
                 <FormSwitchText onClick={() => formChangeHandler("register")}>

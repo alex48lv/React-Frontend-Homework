@@ -3,7 +3,6 @@ export const colors = {
     white: "#ffffff",
     black: "#000000",
     lightGrey: "#d3d3d3",
-    error: '#FF6347',
   };
   
   export const fontSizes = {

@@ -1,8 +1,6 @@
 import CardContainer from "../components/CardContainer/CardContainer";
 import CardContent from "../components/CardContent/CardContent";
 import Cards from "../data/data";
-import styled from "styled-components";
-import { paddings } from "../theme/theme";
 import LearnMoreBtn from "../components/buttons/LearnMoreBtn";
 import H1Header from "../components/text/H1Header";
 

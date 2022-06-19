@@ -6,17 +6,23 @@ import CardContent from "../components/CardContent/CardContent";
 import styled from "styled-components";
 import { devices } from "../theme/theme";
 
+const AllCardContainer = styled(CardContainer)`
+    ${devices.laptop} {
+        flex-wrap: wrap;
+    }
+`;
+
 
 const AllPosts = () => {
 
     return (
         <>
             <H1Header>All Posts</H1Header>
-            <CardContainer>
+            <AllCardContainer>
                 {Cards.map((card) => {
                     return <CardContent key={card.id} data={card} />;
                 })}
-            </CardContainer>
+            </AllCardContainer>
             <LearnMoreBtn>Learn more</LearnMoreBtn>
         </>
     )

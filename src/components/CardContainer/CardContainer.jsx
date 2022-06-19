@@ -10,12 +10,11 @@ const Container = styled.div`
 
   ${devices.laptop} {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 55rem;
   }
 `;
 
-const CardContainer = ({ children }) => <Container>{children}</Container>;
+const CardContainer = ({ className, children }) => <Container className={className}>{children}</Container>;
 
 export default CardContainer;

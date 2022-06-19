@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { colors } from "./theme/theme";
 
 const GlobalStyle = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -34,7 +35,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     font-family: Open-sans, sans-serif;
-	background: #2f3236;
+	background: ${colors.bg};
 }
 ol, ul {
 	list-style: none;

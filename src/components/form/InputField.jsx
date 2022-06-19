@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { colors, margins } from "../../theme/theme";
 
@@ -12,6 +13,8 @@ const StyledField = styled.input`
     box-sizing: border-box;
 `;
 
-const InputField = ({ className, type, name }) => <StyledField className={className} type={type} name={name} />;
+const InputField = ({ className, type, name }, ref) => <StyledField ref={ref} className={className} type={type} name={name} />;
 
-export default InputField;
+const FieldInput = React.forwardRef(InputField);
+
+export default FieldInput;

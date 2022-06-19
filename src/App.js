@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./components/auth/Auth";
+import Footer from "./components/Footer/Footer";
 import Nav from "./components/Nav/Nav";
 import ModalContext from "./context/ModelContext";
 import GlobalStyle from "./GlobalStyle";
@@ -24,11 +25,11 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route exact path="/all-posts" element={<AllPosts />} />
             <Route exact path="/create" element={<CreatePost />} />
-
           </Routes>
           {isOpen && <Auth />}
         </BrowserRouter>
       </ModalContext.Provider>
+      <Footer />
     </>
   );
 };

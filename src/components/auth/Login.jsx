@@ -1,12 +1,12 @@
 
 import styled from "styled-components";
-import { object, string } from "yup";
 import { colors, margins, paddings } from "../../theme/theme";
 import FormTitle from "../form/FormTitle";
 import InputField from "../form/InputField";
 import SubmitButton from "../buttons/SubmitButton";
 import InputLabel from "../form/InputLabel";
 import { useForm } from "react-hook-form";
+import React from "react";
 
 const FormFooter = styled.div`
     position: absolute;
@@ -26,20 +26,15 @@ const ForgotPasswordText = styled(FormSwitchText)`
 `;
 
 const Login = ({ formChangeHandler }) => {
-    const { register, handleSubmit } = useForm({
-        defaultValues: {
-            email: '',
-            password: ''
-        }
-    });
+    const { register, handleSubmit, setValue } = useForm();
 
     return (
-        <form onSubmit={handleSubmit(console.log)}>
+        <form onSubmit={handleSubmit()}>
             <FormTitle>Log in</FormTitle>
             <InputLabel for="email">Email</InputLabel>
-            <InputField type="text" name="email" {...register("email", { required: true })} />
+            <InputField type="text" name="email" onChange={e => setValue("email", e.target.value)} />
             <InputLabel for="password">Password</InputLabel>
-            <InputField type="password" name="password" {...register("password", { required: true })} />
+            <InputField type="password" name="password" onChange={e => setValue("password", e.target.value)} />
             <ForgotPasswordText onClick={() => formChangeHandler("forgot")}>
                 Forgot password?
             </ForgotPasswordText>

@@ -5,11 +5,11 @@ import SubmitButton from '../components/buttons/SubmitButton';
 import FormTitle from '../components/form/FormTitle';
 import InputField from '../components/form/InputField';
 import InputLabel from '../components/form/InputLabel';
-import { colors, devices, margins, paddings } from '../theme/theme';
+import { colors, margins, paddings } from '../theme/theme';
 
 const FormCreate = styled.form`
     width: 300px;
-    height: 350px;
+    min-height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,13 +17,13 @@ const FormCreate = styled.form`
     margin: 8rem auto;
     padding: ${paddings.md};
     background: ${colors.white};
-    border-radius: 3%;
+    border-radius: 5px;
 `;
 
 const TextField = styled.textarea`
     width: 100%;
     border: 1px solid ${colors.lightBlue};
-    margin-bottom: ${margins.md};
+    margin-bottom: ${margins.xs};
     background: ${colors.lightGrey};
     border: 1px solid ${colors.bg};
     border-radius: 5px;

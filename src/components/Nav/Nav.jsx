@@ -104,7 +104,7 @@ const DropDown = styled.div`
   }
 
   @media (min-width: 1000px) {
-    right: calc((100% - 1000px) / 2);
+    right: calc((100% - 1000px) / 2); //body width 1000px+ dropdown position becomes fixed
   }
 `;
 
